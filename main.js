@@ -44,13 +44,12 @@ function create() {
       total: total.innerHTML,
       category: category.value,
     };
-    if (count.value==""){
-      count.value=1;
+    if (count.value == "") {
+      count.value = 1;
     }
     for (let z = 0; z < count.value; z++) {
       proarr.push(pro);
       localStorage.setItem("product", JSON.stringify(proarr));
-      
     }
   } else {
     //update
@@ -137,14 +136,13 @@ function updatedata(i) {
   ads.value = proarr[i].ads;
   tax.value = proarr[i].tax;
   discount.value = proarr[i].discount;
-  total.innerHTML = proarr[i].total;
   category.value = proarr[i].category;
-  tmp = i;
-  gettotal();
   mood = "update";
+  gettotal();
   submit.innerHTML = mood;
+  tmp = i;
+  count.style.display = "none";
 }
-
 
 // -------------------------search---------------------------------------
 
@@ -188,4 +186,3 @@ function search(type) {
     }
   }
 }
-
