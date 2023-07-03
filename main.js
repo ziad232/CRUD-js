@@ -33,17 +33,17 @@ if (localStorage.product == null) {
   proarr = JSON.parse(localStorage.product);
 }
 function create() {
+  let pro = {
+    title: title.value,
+    price: price.value,
+    ads: ads.value,
+    tax: tax.value,
+    discount: discount.value,
+    total: total.innerHTML,
+    category: category.value,
+  };
   if (mood == "create") {
     // create
-    let pro = {
-      title: title.value,
-      price: price.value,
-      ads: ads.value,
-      tax: tax.value,
-      discount: discount.value,
-      total: total.innerHTML,
-      category: category.value,
-    };
     if (count.value == "") {
       count.value = 1;
     }
@@ -75,6 +75,7 @@ function create() {
   category.value = "";
   showdata();
   buttondelete();
+  count.style.display = "initial";
 }
 
 // -------------------------show---------------------------------------
