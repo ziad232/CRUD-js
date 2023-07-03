@@ -53,15 +53,10 @@ function create() {
     }
   } else {
     //update
-    proarr[tmp].title = title.value;
-    proarr[tmp].price = price.value;
-    proarr[tmp].ads = ads.value;
-    proarr[tmp].tax = tax.value;
-    proarr[tmp].discount = discount.value;
-    proarr[tmp].total = total.innerHTML;
-    proarr[tmp].category = category.value;
+    proarr[tmp] = pro;
     mood = "create";
     submit.innerHTML = mood;
+    localStorage.setItem("product", JSON.stringify(proarr));
   }
 
   title.value = "";
