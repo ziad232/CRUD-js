@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CRUD</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -13,9 +13,9 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
       </div>
       <div class="inputs">
-        <input type="text" id="title" placeholder="title" />
+        <input required type="text" id="title" placeholder="title" />
         <div class="price">
-          <input
+          <input required
             onkeyup="gettotal()"
             type="number"
             id="price"
@@ -36,19 +36,19 @@
           <input
             onkeyup="gettotal()"
             type="number"
-            id="disc"
-            placeholder="disc"
+            id="discount"
+            placeholder="discount"
           />
           <span id="total"></span>
         </div>
         <input type="number" placeholder="count" id="count" />
-        <input type="text" placeholder="category" id="category" />
+        <input required type="text" placeholder="category" id="category" />
         <button id="submit" onclick="create()"></button>
       </div>
       <div class="outputs">
         <input type="text" id="search" placeholder="search" />
         <div class="searchbutton">
-          <button name="cat"  onclick="search(this.name)" id="searchcat">search category</button>
+          <button name="category"  onclick="search(this.name)" id="searchcategory">search category</button>
           <button name="title" onclick="search(this.name)" id="searchtitle">search title</button>
         </div>
         <div id="deleteall"></div>
@@ -59,7 +59,7 @@
             <th>price</th>
             <th>tax</th>
             <th>ads</th>
-            <th>disc</th>
+            <th>discount</th>
             <th>total</th>
             <th>category</th>
             <th>update</th>
@@ -67,21 +67,7 @@
           </tr>
           <tbody id="tbody"></tbody>
         </table>
-        <!-- <table id="none">
-          <tr>
-            <th>id</th>
-            <th>title</th>
-            <th>price</th>
-            <th>tax</th>
-            <th>ads</th>
-            <th>disc</th>
-            <th>total</th>
-            <th>category</th>
-            <th>update</th>
-            <th>delete</th>
-          </tr>
-          <tbody id="t2"></tbody>
-        </table> -->
+        
       </div>
     </div>
     <script src="main.js"></script>

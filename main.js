@@ -2,9 +2,9 @@
 let price = document.getElementById("price");
 let ads = document.getElementById("ads");
 let tax = document.getElementById("tax");
-let disc = document.getElementById("disc");
+let discount = document.getElementById("discount");
 let total = document.getElementById("total");
-let cat = document.getElementById("category");
+let category = document.getElementById("category");
 let tbody = document.getElementById("tbody");
 let deleteall = document.getElementById("deleteall");
 let deletealldata = document.getElementById("deletealldata");
@@ -19,7 +19,7 @@ submit.innerHTML = mood;
 // -------------------------gettotal---------------------------------------
 function gettotal() {
   if (price.value != "") {
-    total.innerHTML = +price.value + +ads.value + +tax.value - +disc.value;
+    total.innerHTML = +price.value + +ads.value + +tax.value - +discount.value;
     total.style.background = "green";
   } else {
     total.style.background = "rgb(149, 36, 36)";
@@ -40,9 +40,9 @@ function create() {
       price: price.value,
       ads: ads.value,
       tax: tax.value,
-      disc: disc.value,
+      discount: discount.value,
       total: total.innerHTML,
-      cat: cat.value,
+      category: category.value,
     };
     if (count.value==""){
       count.value=1;
@@ -58,9 +58,9 @@ function create() {
     proarr[tmp].price = price.value;
     proarr[tmp].ads = ads.value;
     proarr[tmp].tax = tax.value;
-    proarr[tmp].disc = disc.value;
+    proarr[tmp].discount = discount.value;
     proarr[tmp].total = total.innerHTML;
-    proarr[tmp].cat = cat.value;
+    proarr[tmp].category = category.value;
     mood = "create";
     submit.innerHTML = mood;
   }
@@ -69,11 +69,11 @@ function create() {
   price.value = "";
   ads.value = "";
   tax.value = "";
-  disc.value = "";
+  discount.value = "";
   count.value = "";
   total.style.background = "rgb(149, 36, 36)";
   total.innerHTML = "";
-  cat.value = "";
+  category.value = "";
   showdata();
   buttondelete();
 }
@@ -90,9 +90,9 @@ function showdata() {
             <td>${proarr[i].price}</td>
             <td>${proarr[i].ads}</td>
             <td>${proarr[i].tax}</td>
-            <td>${proarr[i].disc}</td>
+            <td>${proarr[i].discount}</td>
             <td>${proarr[i].total}</td>
-            <td>${proarr[i].cat}</td>
+            <td>${proarr[i].category}</td>
             <td><button onclick="updatedata(${i})" id="update">update</button></td>
             <td><button onclick="deletedata(${i})" id="delete">delete</button></td>
           </tr>
@@ -136,9 +136,9 @@ function updatedata(i) {
   price.value = proarr[i].price;
   ads.value = proarr[i].ads;
   tax.value = proarr[i].tax;
-  disc.value = proarr[i].disc;
+  discount.value = proarr[i].discount;
   total.innerHTML = proarr[i].total;
-  cat.value = proarr[i].cat;
+  category.value = proarr[i].category;
   tmp = i;
   gettotal();
   mood = "update";
@@ -150,18 +150,18 @@ function updatedata(i) {
 
 function search(type) {
   tbody.innerHTML = "";
-  if (type == "cat") {
+  if (type == "category") {
     for (let c = 0; c < proarr.length; c++) {
-      if (searchbox.value == proarr[c].cat) {
+      if (searchbox.value == proarr[c].category) {
         tbody.innerHTML += `<tr>
             <td>${c}</td>
             <td>${proarr[c].title}</td>
             <td>${proarr[c].price}</td>
             <td>${proarr[c].tax}</td>
             <td>${proarr[c].ads}</td>
-            <td>${proarr[c].disc}</td>
+            <td>${proarr[c].discount}</td>
             <td>${proarr[c].total}</td>
-            <td>${proarr[c].cat}</td>
+            <td>${proarr[c].category}</td>
             <td><button onclick="updatedata(${c})" id="update">update</button></td>
             <td><button onclick="deletedata(${c})" id="delete">delete</button></td>
     </tr>
@@ -177,7 +177,7 @@ function search(type) {
             <td>${proarr[c].price}</td>
             <td>${proarr[c].tax}</td>
             <td>${proarr[c].ads}</td>
-            <td>${proarr[c].disc}</td>
+            <td>${proarr[c].discount}</td>
             <td>${proarr[c].total}</td>
             <td>${proarr[c].category}</td>
             <td><button onclick="updatedata(${c})" id="update">update</button></td>
